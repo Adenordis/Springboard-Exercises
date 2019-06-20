@@ -1,3 +1,5 @@
 .ipynb_checkpoints/
 1552336725_DSC_V3_API_Mini_Project/
-.csv
+*.csv
+Brandon\ Rhodes\ Pandas\ Exercises/pycon-pandas-tutorial-master/*
+!Brandon\ Rhodes\ Pandas\ Exercises/pycon-pandas-tutorial-master/Exercises-[0-9].ipynb
