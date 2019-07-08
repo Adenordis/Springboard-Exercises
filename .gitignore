@@ -3,3 +3,5 @@
 *.csv
 Brandon\ Rhodes\ Pandas\ Exercises/pycon-pandas-tutorial-master/*
 !Brandon\ Rhodes\ Pandas\ Exercises/pycon-pandas-tutorial-master/Exercises-[0-9].ipynb
+__MACOSX/
+*.DS_STORE
