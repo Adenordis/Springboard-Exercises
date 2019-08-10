@@ -1,7 +1,6 @@
 .ipynb_checkpoints/
 05-4_MiniProj_API_working/
-*.csv
-data/
+05-1_Other_Brandon-Rhodes-Pandas-Exercises/pycon-pandas-tutorial-master/data/
 __MACOSX/
 *.DS_STORE
 Ex_Files_Python_Statistics_EssT/
