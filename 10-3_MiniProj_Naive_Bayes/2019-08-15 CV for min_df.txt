@@ -1,0 +1,31 @@
+min_dfs = [1,2,3,4,5,7,10,20,100]
+maxscore=-np.inf
+cv_scores = {'min_df': [], 'alpha': [], 'score': []}
+for min_df in min_dfs:
+    for alpha in alphas:  
+        vectorizer = CountVectorizer(min_df=min_df)       
+        Xthis, ythis = make_xy(critics, vectorizer)
+        Xtrainthis = Xthis[mask]
+        ytrainthis = ythis[mask]
+        classifier = MultinomialNB(alpha = alpha)
+        score = cv_score(classifier, Xtrainthis, ytrainthis, log_likelihood)
+        cv_scores['min_df'].append(min_df)
+        cv_scores['alpha'].append(alpha)
+        cv_scores['score'].append(score)
+full_cv = pd.DataFrame(cv_scores)
+
+full_cv.sort_values('score', ascending = False).head()
+
+for alpha in alphas:
+    tmp = full_cv[full_cv.alpha == alpha]
+    _ = plt.plot(tmp.min_df, tmp.score)
+_ = plt.xlabel('min_df')
+_ = plt.ylabel('cv score')
+_ = plt.legend(['alpha = {}'.format(a) for a in alphas])
+
+for m in min_dfs:
+    tmp = full_cv[full_cv.min_df == m]
+    _ = plt.plot(tmp.alpha, tmp.score)
+_ = plt.xlabel('alpha')
+_ = plt.ylabel('cv score')
+_ = plt.legend(['min_df = {}'.format(m) for m in min_dfs])
